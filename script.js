@@ -1,11 +1,13 @@
 //your JS code here. If required.
 function mapLetters(l) {
-   let string = l.lowerCase();
-	let obj = {};
-	let index = l;
-	obj[index] = indexOf(l);
-	return obj;
+    let string = l.toLowerCase(); // Correct method name: toLowerCase()
+    let obj = {};
+    for (let i = 0; i < string.length; i++) {
+        let index = string[i];
+        obj[index] = i;
+    }
+    return obj;
 }
 
 let l = prompt("Enter the string:");
-alert(mapLetters(l));
+alert(JSON.stringify(mapLetters(l))); // Use JSON.stringify() to display the object properly
